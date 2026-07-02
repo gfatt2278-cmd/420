@@ -1,27 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAM 420</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 5px;
+            font-size: 28px;
+        }
+        .welcome-text {
+            color: #aaaaaa;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .logo-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #4CAF50;
+            font-size: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            text-align: left;
+        }
+        .meaning-box {
+            text-align: left;
+            line-height: 1.6;
+            color: #dddddd;
+            font-size: 15px;
+        }
+        .meaning-box p {
+            margin: 10px 0;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>TEAM 420</h1>
-    <p>Welcome to TEAM 420 Official Website!</p>
+<div class="container">
+    <!-- နှုတ်ဆက်စာအပိုင်း -->
+    <h1>Welcome to TEAM 420</h1>
+    <div class="welcome-text">TEAM 420 Official App မှ နွေးထွေးစွာ ကြိုဆိုပါတယ်ဗျာ။</div>
 
-    <!-- ၁။ ပုံ (Image) ထည့်ရန်နေရာ -->
-    <div class="image-section">
-        <h2>Our Image</h2>
-        <!-- သင့်မှာရှိတဲ့ ပုံဖိုင်အမည် (ဥပမာ- photo.jpg) ကို src မှာ ပြောင်းထည့်ပါ -->
-        <img src="my-team.jpg" alt="TEAM 420 Photo" width="500">
+    <!-- ၄၂၀ လိုဂိုပုံ -->
+    <img src="https://gfatt2278-cmd.github.io/420/1000017096.png" alt="TEAM 420 Logo" class="logo-img">
+
+    <!-- လိုဂိုအဓိပ္ပာယ်ရှင်းလင်းချက်အပိုင်း -->
+    <div class="section-title">🛸 TEAM 420 Logo အဓိပ္ပာယ်</div>
+    <div class="meaning-box">
+        <p>ကျွန်တော်တို့ <b>TEAM 420</b> အဖွဲ့ရဲ့ ရည်ရွယ်ချက်နဲ့ လိုဂိုပုံရိပ်ရဲ့ အဓိပ္ပာယ် ရှင်းလင်းချက်ဖြစ်ပါတယ်။</p>
+        <p>• <b>UFO ယာဉ်ပျံ:</b> အကန့်အသတ်မရှိတဲ့ လွတ်လပ်မှု၊ ဆန်းသစ်တီထွင်မှုနဲ့ နယ်ပယ်အသစ်တွေကို စူးစမ်းရှာဖွေခြင်းကို ကိုယ်စားပြုပါတယ်။</p>
+        <p>• <b>၄၂၀ သင်္ကေတ:</b> ကျွန်တော်တို့ အဖွဲ့သားများရဲ့ စည်းလုံးညီညွတ်မှု၊ တူညီသော ဝါသနာနဲ့ ထူးခြားဆန်းပြားတဲ့ ဖန်တီးမှု စွမ်းရည်တွေကို ရည်ညွှန်းထားခြင်း ဖြစ်ပါတယ်ဗျာ။</p>
     </div>
 
-    <!-- ၂။ ဗီဒီယို (Video) ထည့်ရန်နေရာ -->
-    <div class="video-section">
-        <h2>Our Video</h2>
-     <iframe width="100%" height="450" src="https://www.youtube.com/embed/hDU_GlmKioI" frameborder="0" allowfullscreen></iframe>   
-       
+    <!-- ဗီဒီယိုအပိုင်း -->
+    <div class="section-title">📺 Our Official Video</div>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/fD33Z9L-80c" allowfullscreen></iframe>
     </div>
+</div>
 
 </body>
 </html>
+
