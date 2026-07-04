@@ -63,8 +63,21 @@
     background-size:70px 70px,140px 140px;
     animation:starsMove 60s linear infinite;
     opacity:.35;
+.stars{
+    ...
 }
-position:fixed;
+
+@keyframes starsMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(-500px);}
+}
+
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+<div class="container">
 top:0;
 left:0;
 width:100%;
