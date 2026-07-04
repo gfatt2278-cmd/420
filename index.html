@@ -167,12 +167,16 @@ TAP THE LOGO TO BEGIN
 </div>
 
 <script>
-
 function startIntro(){
 
-document.querySelector(".text").style.display="none";
-document.querySelector(".msg").style.display="none";
-document.querySelector(".tap").style.display="none";
+    alert("Logo Clicked!");
+
+    document.querySelector(".text").style.display="none";
+    document.querySelector(".msg").style.display="none";
+    document.querySelector(".tap").style.display="none";
+
+    showStory();
+}
 
 let logo=document.querySelector(".logo");
 
