@@ -169,11 +169,11 @@ TAP THE LOGO TO BEGIN
 <script>
 function startIntro(){
 
-    document.querySelector(".text").style.display="none";
-    document.querySelector(".msg").style.display="none";
-    document.querySelector(".tap").style.display="none";
-
     let logo = document.querySelector(".logo");
+
+    document.querySelector(".text").style.display = "none";
+    document.querySelector(".msg").style.display = "none";
+    document.querySelector(".tap").style.display = "none";
 
     logo.style.transition = "2s";
     logo.style.transform = "translate(-50%,-50%) scale(1.6)";
@@ -191,7 +191,6 @@ function startIntro(){
         },300);
 
     },1800);
-
 }
 function showStory(){
 
