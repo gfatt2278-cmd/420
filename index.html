@@ -70,6 +70,27 @@ button{
     z-index:10;
 }
 </style>
+    /* Explosion Effect */
+.explosion{
+    position:absolute;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ffff66,#ff9900,#ff0000,transparent);
+    animation:explode .4s forwards;
+    pointer-events:none;
+}
+
+@keyframes explode{
+    from{
+        transform:scale(.3);
+        opacity:1;
+    }
+    to{
+        transform:scale(2.5);
+        opacity:0;
+    }
+}
 </head>
 
 <body>
@@ -87,7 +108,23 @@ button{
 <div id="ui">Score: 0 | Lives: 3</div>
 
 <script>
+function createExplosion(x,y){
 
+    const ex=document.createElement("div");
+
+    ex.className="explosion";
+
+    ex.style.left=x+"px";
+
+    ex.style.top=y+"px";
+
+    document.body.appendChild(ex);
+
+    setTimeout(()=>{
+        ex.remove();
+    },400);
+
+}
 let score=0;
 let lives=3;
 let gameOn=false;
