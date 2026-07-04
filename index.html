@@ -3,110 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEAM 420</title>
+<title>TEAM 420 - UFO MODE</title>
 
 <style>
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:black;
+    color:white;
+    overflow-x:hidden;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+/* LOADING SCREEN */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:999;
+    animation:fadeOut 2s ease 3s forwards;
+}
+#loader h1{
+    color:#00ff99;
+    text-shadow:0 0 20px #00ff99;
 }
 
-h1 {
-    color: #4CAF50;
-    margin-bottom: 5px;
-    font-size: 28px;
+@keyframes fadeOut{
+    to{opacity:0;visibility:hidden;}
 }
 
-.welcome-text {
-    color: #aaaaaa;
-    font-size: 14px;
-    margin-bottom: 25px;
+/* STAR BACKGROUND */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+        radial-gradient(white 1px,transparent 1px),
+        radial-gradient(#00ff99 1px,transparent 1px);
+    background-size:80px 80px,160px 160px;
+    animation:moveStars 60s linear infinite;
+    opacity:0.25;
 }
 
-.logo-img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
+@keyframes moveStars{
+    from{transform:translateY(0);}
+    to{transform:translateY(-1000px);}
 }
 
-.section-title {
-    color: #4CAF50;
-    font-size: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 8px;
-    margin-top: 25px;
-    text-align: left;
+/* UFO */
+.ufo{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:120px;
+    animation:floating 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 10px #00ff99);
 }
 
-.meaning-box {
-    text-align: left;
-    line-height: 1.6;
-    color: #dddddd;
-    font-size: 15px;
+@keyframes floating{
+    0%,100%{transform:translateX(-50%) translateY(0);}
+    50%{transform:translateX(-50%) translateY(20px);}
 }
 
-/* STAR BACKGROUND FIXED */
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image:
-        radial-gradient(white 1px, transparent 1px),
-        radial-gradient(#00ff99 1px, transparent 1px);
-    background-size: 70px 70px, 140px 140px;
-    animation: starsMove 60s linear infinite;
-    opacity: 0.35;
+/* UFO BEAM */
+.beam{
+    position:absolute;
+    top:90px;
+    left:50%;
+    transform:translateX(-50%);
+    width:120px;
+    height:200px;
+    background:linear-gradient(to bottom, rgba(0,255,153,0.5), transparent);
+    clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);
+    animation:pulse 1.5s infinite alternate;
 }
 
-@keyframes starsMove {
-    from { transform: translateY(0); }
-    to { transform: translateY(-500px); }
+@keyframes pulse{
+    from{opacity:0.3;}
+    to{opacity:0.8;}
+}
+
+/* MAIN CONTAINER */
+.container{
+    position:relative;
+    z-index:2;
+    max-width:600px;
+    margin:auto;
+    padding:20px;
+    text-align:center;
+}
+
+/* LOGO */
+.logo{
+    width:75%;
+    border-radius:15px;
+    box-shadow:0 0 25px #00ff99;
+}
+
+/* TITLE */
+h1{
+    color:#00ff99;
+    text-shadow:0 0 15px #00ff99;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    background:linear-gradient(45deg,#00ff99,#00ccff);
+    color:black;
+    font-weight:bold;
+    border-radius:30px;
+    text-decoration:none;
+    box-shadow:0 0 20px #00ff99;
+    transition:0.3s;
+}
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px #00ccff;
+}
+
+/* BOX */
+.box{
+    background:#141414;
+    padding:15px;
+    margin-top:20px;
+    border-radius:15px;
+    text-align:left;
+    box-shadow:0 0 10px #00ff99;
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- LOADER -->
+<div id="loader">
+    <h1>TEAM 420 LOADING...</h1>
+</div>
+
+<!-- BACKGROUND -->
 <div class="stars"></div>
 
+<!-- UFO -->
+<img class="ufo" src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png">
+<div class="beam"></div>
+
+<!-- CONTENT -->
 <div class="container">
 
-<h1>Welcome to TEAM 420</h1>
-<div class="welcome-text">TEAM 420 Official App မှ ကြိုဆိုပါတယ်ဗျာ</div>
+<h1>TEAM 420</h1>
+<p style="color:#aaa">Sci-Fi APK Official Website</p>
 
-<img src="https://i.ibb.co/69LySFL/file-00000000b7c71fbacf28d9e7911a861.png" class="logo-img">
+<img class="logo" src="https://i.ibb.co/69LySFL/file-00000000b7c71fbacf28d9e7911a861.png">
 
-<div class="section-title">TEAM 420 Logo အဆိုပြုမယ်</div>
+<a class="btn" href="https://your-apk-link.com">⬇ DOWNLOAD APK</a>
 
-<div class="meaning-box">
-<p>ကမ္ဘာ့အကြီးဆုံး TEAM 420 အဖွဲနဲ့ ရည်ရွယ်ချက်ချင်းနဲ့ လိုက်ဖက်မယ့် နှလုံးသား ရှင်သန်မှုအတွက် ဖွဲစည်းထားတာဖြစ်ပါတယ်။</p>
+<div class="box">
+<h3>🚀 About TEAM 420</h3>
+<p>
+TEAM 420 သည် UFO / Future Sci-Fi theme နဲ့တည်ဆောက်ထားတဲ့ project ဖြစ်ပါတယ်။
+နည်းပညာ၊ လွတ်လပ်မှုနဲ့ စူးစမ်းမှုကို ကိုယ်စားပြုပါတယ်။
+</p>
+</div>
 
-<p><b>UFO ယာဉ်ပျံ</b> ဟာ လွတ်လပ်မှုနဲ့ စူးစမ်းရှာဖွေမှုကို ကိုယ်စားပြုပါတယ်။</p>
-
-<p><b>420</b> အမှတ်က အဖွဲသားတွေကို ချိတ်ဆက်တဲ့ symbol ဖြစ်ပါတယ်။</p>
-
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/hDU_GlmKioI"
-allowfullscreen></iframe>
-
+<div class="box">
+<h3>⚡ Features</h3>
+<p>✔ UFO Animation System</p>
+<p>✔ Neon Glow Design</p>
+<p>✔ APK Download Page</p>
+<p>✔ Galaxy Space UI</p>
 </div>
 
 </div>
