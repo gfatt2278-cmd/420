@@ -50,23 +50,20 @@
             line-height: 1.6;
             color: #dddddd;
             font-size: 15px;
-        <style>
-
-...အရင် CSS...
-
-.stars{
-   ...
+        .stars{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    background-image:
+        radial-gradient(white 1px,transparent 1px),
+        radial-gradient(#00ff99 1px,transparent 1px);
+    background-size:70px 70px,140px 140px;
+    animation:starsMove 60s linear infinite;
+    opacity:.35;
 }
-
-@keyframes starsMove{
-   ...
-}
-
-</style>
-</head>
-<body>
-    </style>
-         
 position:fixed;
 top:0;
 left:0;
