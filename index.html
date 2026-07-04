@@ -154,32 +154,27 @@ TAP THE LOGO TO BEGIN
 </div>
 
 <script>
-function startIntro(){
-
-    let logo = document.querySelector(".logo");
-
-    document.querySelector(".text").style.display = "none";
-    document.querySelector(".msg").style.display = "none";
-    document.querySelector(".tap").style.display = "none";
-
-    logo.style.transition = "2s";
-    logo.style.transform = "translate(-50%,-50%) scale(1.6)";
-    logo.style.filter = "drop-shadow(0 0 80px #00ff66)";
-
-    setTimeout(function(){
-
-        document.body.style.background = "#fff";
-
-        setTimeout(function(){
-
-            document.body.style.background = "#000";
-            showStory();
-
-        },300);
-
-    },1800);
-}
 function showStory(){
+
+    document.querySelector(".logo").style.display = "none";
+
+    const story = document.getElementById("story");
+
+    story.style.display = "block";
+
+    story.innerHTML = `
+    🛸 UNKNOWN SIGNAL DETECTED...
+    <br><br>
+    A strange light appeared in the sky...
+    <br><br>
+    Someone decided to follow it...
+    <br><br>
+    Searching...
+    `;
+
+    setTimeout(scene2,5000);
+
+}
 
 document.querySelector(".logo").style.display="none";
 
