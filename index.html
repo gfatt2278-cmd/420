@@ -147,6 +147,7 @@ function spawnUFO(){
     ufo.style.left=Math.random()*90+"vw";
 
     ufo.onclick=function(){
+    createExplosion(this.offsetLeft,this.offsetTop);
         this.remove();
         score++;
         updateUI();
