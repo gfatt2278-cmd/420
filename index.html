@@ -52,9 +52,86 @@
             font-size: 15px;
         }
     </style>
+         .stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(#00ff99 1px,transparent 1px);
+background-size:70px 70px,140px 140px;
+animation:starsMove 60s linear infinite;
+opacity:.35;
+}
+
+@keyframes starsMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-500px);
+}
+}
 </head>
 <body>
+body{
+background:#050816;
+color:white;
+font-family:Arial;
+margin:0;
+}
 
+.hero{
+text-align:center;
+padding:80px;
+}
+
+.hero h1{
+font-size:60px;
+color:#00ff99;
+text-shadow:0 0 20px #00ff99;
+}
+
+.btn,.btn2{
+padding:15px 30px;
+margin:10px;
+border-radius:30px;
+text-decoration:none;
+display:inline-block;
+}
+
+.btn{
+background:#00ff99;
+color:black;
+}
+
+.btn2{
+background:#222;
+color:white;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:#111;
+border:1px solid #00ff99;
+border-radius:15px;
+padding:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #00ff99;
+}
 <div class="container">
     <!-- နုတ်ဆက်စာ -->
     <h1>Welcome to TEAM 420</h1>
