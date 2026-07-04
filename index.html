@@ -3,232 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEAM 420 GAME</title>
+<title>420 UFO Intro</title>
 
 <style>
- .logo{
-    font-size:60px;
-    font-weight:bold;
-    color:#00ff99;
-    text-shadow:0 0 10px #00ff99,0 0 25px #00ff99;
-    animation:logoGlow 2s infinite alternate;
-    margin-bottom:15px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-@keyframes logoGlow{
-    from{
-        transform:scale(1);
-        text-shadow:0 0 10px #00ff99;
-    }
-    to{
-        transform:scale(1.08);
-        text-shadow:0 0 35px #00ff99;
-    }
-}   
 body{
-    margin:0;
-    font-family:Segoe UI;
-    background:black;
-    color:white;
-    overflow:hidden;
-    cursor:crosshair;
+background:#000;
+overflow:hidden;
+font-family:Arial,sans-serif;
 }
 
-/* START SCREEN */
-#startScreen{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:radial-gradient(circle,#001a1a,#000);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
 }
 
-button{
-    padding:15px 30px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(45deg,#00ff99,#00ccff);
-    font-weight:bold;
-    cursor:pointer;
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.35);
+z-index:-1;
 }
 
-/* BACKGROUND */
-.bg{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:radial-gradient(white 1px,transparent 1px);
-    background-size:80px 80px;
-    animation:move 60s linear infinite;
-    opacity:0.2;
+.logo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:280px;
+cursor:pointer;
+filter:
+drop-shadow(0 0 15px #00ff66)
+drop-shadow(0 0 40px #00ff66);
+animation:pulse 2s infinite;
+transition:.4s;
 }
 
-@keyframes move{
-    from{transform:translateY(0);}
-    to{transform:translateY(-1000px);}
+.logo:hover{
+transform:translate(-50%,-50%) scale(1.08);
 }
 
-/* UFO */
-.ufo{
-    position:absolute;
-    width:70px;
-    filter:drop-shadow(0 0 10px #00ff99);
+@keyframes pulse{
+
+0%{
+transform:translate(-50%,-50%) scale(1);
 }
 
-/* UI */
-#ui{
-    position:fixed;
-    top:10px;
-    left:10px;
-    color:#00ff99;
-    font-size:18px;
-    z-index:10;
+50%{
+transform:translate(-50%,-50%) scale(1.05);
 }
 
-/* ✅ Explosion FIX */
-.explosion{
-    position:absolute;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:radial-gradient(circle,#ffff66,#ff9900,#ff0000,transparent);
-    animation:explode .4s forwards;
-    pointer-events:none;
+100%{
+transform:translate(-50%,-50%) scale(1);
 }
 
-@keyframes explode{
-    from{
-        transform:scale(.3);
-        opacity:1;
-    }
-    to{
-        transform:scale(2.5);
-        opacity:0;
-    }
+}
+
+.text{
+position:absolute;
+bottom:140px;
+width:100%;
+text-align:center;
+color:#9cff57;
+font-size:28px;
+font-weight:bold;
+text-shadow:0 0 15px #00ff00;
+}
+
+.msg{
+position:absolute;
+bottom:95px;
+width:100%;
+text-align:center;
+color:white;
+font-size:18px;
+}
+
+.tap{
+position:absolute;
+bottom:40px;
+width:100%;
+text-align:center;
+color:#00ff66;
+font-size:20px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+50%{
+opacity:.2;
+}
+
 }
 </style>
-body{
 
-
-/* Explosion Effect */
-.explosion{
-    position:absolute;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:radial-gradient(circle,#ffff66,#ff9900,#ff0000,transparent);
-    animation:explode .4s forwards;
-    pointer-events:none;
-}
-
-@keyframes explode{
-    from{
-        transform:scale(.3);
-        opacity:1;
-    }
-    to{
-        transform:scale(2.5);
-        opacity:0;
-    }
-}
-</style>
 </head>
 
 <body>
 
-<!-- START -->
-<div id="startScreen">
-    <div class="logo">TEAM 420</div>
+<video autoplay muted loop playsinline>
 
-    <h1 style="color:#00ff99;">
-        SPACE UFO GAME
-    </h1>
+<source src="ufo.mp4" type="video/mp4">
 
-    <button onclick="startGame()">🚀 START GAME</button>
+</video>
+
+<div class="overlay"></div>
+
+<img src="420logo.png"
+class="logo"
+onclick="startIntro()">
+
+<div class="text">
+420 UFO DISCOVERY
 </div>
-<!-- BACKGROUND -->
-<div class="bg"></div>
 
-<!-- GAME UI -->
-<div id="ui">Score: 0 | Lives: 3</div>
+<div class="msg">
+
+Some mysteries are never meant to be found...<br>
+
+But you were chosen.
+
+</div>
+
+<div class="tap">
+
+TAP THE LOGO TO BEGIN
+
+</div>
 
 <script>
-function createExplosion(x,y){
 
-    const ex=document.createElement("div");
+function startIntro(){
 
-    ex.className="explosion";
+document.querySelector(".text").innerHTML="Loading Mission...";
 
-    ex.style.left=x+"px";
+document.querySelector(".msg").innerHTML="Searching Unknown Signal...";
 
-    ex.style.top=y+"px";
+document.querySelector(".tap").style.display="none";
 
-    document.body.appendChild(ex);
+setTimeout(function(){
 
-    setTimeout(()=>{
-        ex.remove();
-    },400);
+alert("Part 2 မှာ UFO Story စပါမယ် 🚀");
 
-}
-let score=0;
-let lives=3;
-let gameOn=false;
+},2000);
 
-function startGame(){
-    document.getElementById("startScreen").style.display="none";
-    gameOn=true;
-    spawnLoop();
-}
-
-/* SPAWN UFO */
-function spawnUFO(){
-    if(!gameOn) return;
-
-    let ufo=document.createElement("img");
-    ufo.src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png";
-    ufo.className="ufo";
-
-    ufo.style.top=Math.random()*80+"vh";
-    ufo.style.left=Math.random()*90+"vw";
-
-    ufo.onclick=function(){
-    createExplosion(this.offsetLeft,this.offsetTop);
-        this.remove();
-        score++;
-        updateUI();
-    }
-
-    document.body.appendChild(ufo);
-
-    setTimeout(()=>{
-        if(ufo.parentElement){
-            ufo.remove();
-            lives--;
-            updateUI();
-
-            if(lives<=0){
-                alert("GAME OVER");
-                location.reload();
-            }
-        }
-    },2000);
-}
-
-/* LOOP */
-function spawnLoop(){
-    setInterval(()=>{
-        spawnUFO();
-    },700);
-}
-
-/* UI */
-function updateUI(){
-    document.getElementById("ui").innerText=
-    "Score: "+score+" | Lives: "+lives;
 }
 
 </script>
