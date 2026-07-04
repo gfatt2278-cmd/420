@@ -169,34 +169,28 @@ TAP THE LOGO TO BEGIN
 <script>
 function startIntro(){
 
-    alert("Logo Clicked!");
-
     document.querySelector(".text").style.display="none";
     document.querySelector(".msg").style.display="none";
     document.querySelector(".tap").style.display="none";
 
-    showStory();
-}
+    let logo=document.querySelector(".logo");
 
-let logo=document.querySelector(".logo");
+    logo.style.transition="2s";
+    logo.style.transform="translate(-50%,-50%) scale(1.6)";
+    logo.style.filter="drop-shadow(0 0 80px #00ff66)";
 
-logo.style.transition="2s";
-logo.style.transform="translate(-50%,-50%) scale(1.6)";
-logo.style.filter="drop-shadow(0 0 80px #00ff66)";
+    setTimeout(function(){
 
-setTimeout(function(){
+        document.body.style.background="#fff";
 
-document.body.style.background="#fff";
+        setTimeout(function(){
 
-setTimeout(function(){
+            document.body.style.background="#000";
+            showStory();
 
-document.body.style.background="#000";
+        },300);
 
-showStory();
-
-},300);
-
-},1800);
+    },1800);
 
 }
 
