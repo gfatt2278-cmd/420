@@ -1,5 +1,5 @@
 <audio id="introMusic" src="intro.mp3"></audio>
-<audio id="clickSound" src="clickSound.mp3"></audio>
+<audio id="clickSound" src="click.mp3"></audio>
 
 <script>
 function startIntro() {
