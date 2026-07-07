@@ -3,240 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>420 UFO Intro</title>
+
+<title>TEAM 420 | UFO INTRO</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body{
-    background:#000;
-    overflow:hidden;
-    font-family:Arial,sans-serif;
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+background:#000;
+font-family:Arial,Helvetica,sans-serif;
 }
+
+/* VIDEO */
 
 video{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
 }
+
+/* DARK OVERLAY */
 
 .overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.35);
-    z-index:0;
-    pointer-events:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+z-index:-2;
 }
 
-.logo{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:280px;
-    cursor:pointer;
-    z-index:10;
-    filter:
-        drop-shadow(0 0 15px #00ff66)
-        drop-shadow(0 0 40px #00ff66);
-    animation:pulse 2s infinite;
-    transition:.4s;
+/* STAR LAYER */
+
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
 }
 
-.text,.msg,.tap{
-    z-index:10;
-    position:absolute;
+/* START SCREEN */
+
+#startScreen{
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
 }
 
+/* LOGO */
 
+#logo{
 
-.text{
-    position:absolute;
-    bottom:140px;
-    width:100%;
-    text-align:center;
-    color:#9cff57;
-    font-size:28px;
-    font-weight:bold;
-    text-shadow:0 0 15px #00ff00;
+width:280px;
+cursor:pointer;
+user-select:none;
+
+filter:
+drop-shadow(0 0 20px #00ff66)
+drop-shadow(0 0 40px #00ff66);
+
+transition:.4s;
+
 }
 
-.msg{
-    position:absolute;
-    bottom:95px;
-    width:100%;
-    text-align:center;
-    color:#fff;
-    font-size:18px;
+/* TITLE */
+
+h1{
+
+margin-top:25px;
+
+font-size:42px;
+
+color:#8eff55;
+
+letter-spacing:3px;
+
+text-shadow:
+0 0 20px #00ff66;
+
 }
 
-.tap{
-    position:absolute;
-    bottom:40px;
-    width:100%;
-    text-align:center;
-    color:#00ff66;
-    font-size:20px;
-    animation:blink 1s infinite;
+/* DESCRIPTION */
+
+#desc{
+
+margin-top:20px;
+
+width:80%;
+max-width:700px;
+
+font-size:22px;
+line-height:38px;
+
+color:white;
+
 }
 
-@keyframes blink{
-50%{
-opacity:.2;
+/* TAP */
+
+#tap{
+
+margin-top:45px;
+
+font-size:24px;
+
+color:#00ff66;
+
 }
-}
+
+/* STORY */
 
 #story{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:90%;
-    text-align:center;
-    color:white;
-    font-size:30px;
-    line-height:55px;
-    text-shadow:0 0 20px #00ff66;
+
+display:none;
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:90%;
+
+max-width:900px;
+
+text-align:center;
+
+font-size:34px;
+
+line-height:60px;
+
+color:white;
+
+text-shadow:
+0 0 15px #00ff66;
+
 }
+
+button{
+
+padding:18px 45px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:12px;
+
+background:#00ff66;
+
+color:black;
+
+font-weight:bold;
+
+cursor:pointer;
+
+margin-top:40px;
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- BACKGROUND VIDEO -->
+
 <video autoplay muted loop playsinline>
-    <source src="ufo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+
+<source src="ufo.mp4" type="video/mp4">
+
 </video>
+
 <div class="overlay"></div>
 
+<canvas id="stars"></canvas>
+
+<!-- START -->
+
+<div id="startScreen">
+
 <img
-    src="420logo.png"
-    alt="420 Logo"
-    class="logo"
-    onclick="startIntro()">
-<div class="text">
-420 UFO DISCOVERY
+id="logo"
+src="420logo.png"
+alt="TEAM 420"
+onclick="startIntro()">
+
+<h1>TEAM 420</h1>
+
+<div id="desc">
+
+Some mysteries were never meant to be discovered...
+
+<br><br>
+
+Tonight...
+
+YOU were chosen.
+
 </div>
 
-<div class="msg">
-Some mysteries are never meant to be found...
-<br><br>
-But you were chosen.
+<div id="tap">
+
+🛸 TAP THE LOGO TO BEGIN
+
 </div>
 
-<div class="tap">
-TAP THE LOGO TO BEGIN
 </div>
 
-<script>
-function showStory(){
+<!-- STORY -->
 
-    document.querySelector(".logo").style.display = "none";
+<div id="story"></div>
 
-    const story = document.getElementById("story");
+<!-- AUDIO -->
 
-    story.style.display = "block";
+<audio id="introMusic" src="intro.mp3"></audio>
 
-    story.innerHTML = `
-    🛸 UNKNOWN SIGNAL DETECTED...
-    <br><br>
-    A strange light appeared in the sky...
-    <br><br>
-    Someone decided to follow it...
-    <br><br>
-    Searching...
-    `;
+<audio id="clickSound" src="click.mp3"></audio>
 
-    setTimeout(scene2,5000);
-
-}
-
-document.querySelector(".logo").style.display="none";
-
-document.body.innerHTML += `
-<div id="story">
-🛸 UNKNOWN SIGNAL DETECTED...
-<br><br>
-A strange light appeared in the sky...
-<br><br>
-Someone decided to follow it...
-<br><br>
-Searching...
-</div>
-`;
-
-setTimeout(scene2,5000);
-
-}
-
-function scene2(){
-
-document.getElementById("story").innerHTML=`
-🌌 The signal became stronger...
-<br><br>
-Three UFOs appeared above the forest.
-<br><br>
-MISSION STARTED
-`;
-
-setTimeout(scene3,5000);
-
-}
-
-function scene3(){
-
-document.getElementById("story").innerHTML=`
-🚶
-<br><br>
-A lonely traveler entered the forest...
-<br><br>
-Looking for the mysterious
-420 Logo...
-`;
-
-setTimeout(scene4,5000);
-
-}
-
-function scene4(){
-
-document.getElementById("story").innerHTML=`
-✨
-<br><br>
-MISSION COMPLETE
-<br><br>
-The 420 Logo has been found.
-<br><br><br>
-
-<button onclick="location.reload()" style="
-padding:18px 45px;
-font-size:22px;
-background:#00ff66;
-color:black;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-weight:bold;
-box-shadow:0 0 20px #00ff66;
-">
-PLAY AGAIN
-</button>
-`;
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
