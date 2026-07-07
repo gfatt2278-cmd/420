@@ -36,6 +36,8 @@ function startIntro() {
     }, 8000);
 
 }
+</script>
+
 <script>
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
