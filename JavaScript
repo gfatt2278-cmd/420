@@ -1,11 +1,14 @@
 <audio id="introMusic" src="intro.mp3"></audio>
-
 <audio id="clickSound" src="click.mp3"></audio>
 
 <script>
 function startIntro() {
-    document.getElementById("startScreen").style.display = "none";
+    // JavaScript Code
+}
+</script>
 
+</body>
+</html>
     const story = document.getElementById("story");
     story.style.display = "block";
 
