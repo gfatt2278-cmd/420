@@ -1,1 +1,243 @@
+/* ===========================
+   TEAM 420 - PART 2
+   ANIMATIONS & EFFECTS
+=========================== */
 
+/* Logo Glow */
+#logo{
+    animation:pulse 2s ease-in-out infinite;
+}
+
+#logo:hover{
+    transform:scale(1.08);
+    filter:
+        drop-shadow(0 0 25px #00ff66)
+        drop-shadow(0 0 60px #00ff66);
+}
+
+/* Logo Pulse */
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+filter:
+drop-shadow(0 0 15px #00ff66);
+}
+
+50%{
+transform:scale(1.06);
+filter:
+drop-shadow(0 0 35px #00ff66)
+drop-shadow(0 0 70px #00ff66);
+}
+
+100%{
+transform:scale(1);
+filter:
+drop-shadow(0 0 15px #00ff66);
+}
+
+}
+
+/* TAP Animation */
+
+#tap{
+
+animation:blink 1.2s infinite;
+
+}
+
+@keyframes blink{
+
+0%{opacity:1;}
+50%{opacity:.3;}
+100%{opacity:1;}
+
+}
+
+/* Story Fade */
+
+#story{
+
+opacity:0;
+
+transition:1s;
+
+}
+
+.show{
+
+display:block !important;
+
+opacity:1 !important;
+
+}
+
+/* UFO Beam */
+
+.beam{
+
+position:absolute;
+
+left:50%;
+top:0;
+
+transform:translateX(-50%);
+
+width:280px;
+height:100%;
+
+background:linear-gradient(
+to bottom,
+rgba(0,255,100,.65),
+rgba(0,255,100,.25),
+transparent
+);
+
+filter:blur(10px);
+
+animation:beamPulse 2s infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes beamPulse{
+
+0%{
+opacity:.35;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:.35;
+}
+
+}
+
+/* Floating Animation */
+
+.float{
+
+animation:floatLogo 5s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-18px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* Text Glow */
+
+h1{
+
+animation:titleGlow 2s infinite;
+
+}
+
+@keyframes titleGlow{
+
+0%{
+
+text-shadow:
+0 0 10px #00ff66;
+
+}
+
+50%{
+
+text-shadow:
+0 0 25px #00ff66,
+0 0 60px #00ff66;
+
+}
+
+100%{
+
+text-shadow:
+0 0 10px #00ff66;
+
+}
+
+}
+
+/* Story Animation */
+
+.storyText{
+
+animation:fadeStory 1s;
+
+}
+
+@keyframes fadeStory{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+#logo{
+
+width:180px;
+
+}
+
+h1{
+
+font-size:30px;
+
+}
+
+#desc{
+
+font-size:18px;
+line-height:30px;
+
+}
+
+#story{
+
+font-size:22px;
+line-height:42px;
+
+}
+
+button{
+
+font-size:18px;
+
+padding:15px 30px;
+
+}
+
+}
