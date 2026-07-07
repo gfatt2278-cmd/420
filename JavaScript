@@ -36,57 +36,13 @@ function startIntro() {
     }, 8000);
 
 }
-</script>
+</script>   <!-- ✅ ဒီစာကြောင်းကို ထည့်ပါ -->
 
 <script>
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas(){
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-
-window.addEventListener("resize", resizeCanvas);
-
-const stars = [];
-
-for(let i=0;i<150;i++){
-    stars.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*2+1,
-        s:Math.random()*0.5+0.2
-    });
-}
-
-function animateStars(){
-
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle="#ffffff";
-
-    stars.forEach(star=>{
-
-        ctx.beginPath();
-        ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
-        ctx.fill();
-
-        star.y += star.s;
-
-        if(star.y > canvas.height){
-            star.y = -5;
-            star.x = Math.random()*canvas.width;
-        }
-
-    });
-
-    requestAnimationFrame(animateStars);
-
-}
-
-animateStars();
+// Animated Stars Code...
 </script>
 
 </body>
