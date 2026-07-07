@@ -255,8 +255,56 @@ YOU were chosen.
 <audio id="clickSound" src="click.mp3"></audio>
 
 <script>
-    // JavaScript Code
+function startIntro() {
+
+    document.getElementById("startScreen").style.display = "none";
+
+    const story = document.getElementById("story");
+    story.style.display = "block";
+
+    story.innerHTML = `
+        🛸 UNKNOWN SIGNAL DETECTED...
+        <br><br>
+        A strange light appeared in the sky...
+        <br><br>
+        Searching...
+    `;
+
+    setTimeout(() => {
+        story.innerHTML = `
+            🌌 The signal became stronger...
+            <br><br>
+            Three UFOs appeared above the forest.
+            <br><br>
+            MISSION STARTED
+        `;
+    }, 4000);
+
+    setTimeout(() => {
+        story.innerHTML = `
+            🚶 A lonely traveler followed the light...
+            <br><br>
+            Looking for the mysterious
+            TEAM 420...
+        `;
+    }, 8000);
+
+    setTimeout(() => {
+        story.innerHTML = `
+            ✨ MISSION COMPLETE
+            <br><br>
+            Welcome to TEAM 420
+            <br><br>
+            <button onclick="location.reload()">
+                PLAY AGAIN
+            </button>
+        `;
+    }, 12000);
+
+}
 </script>
 
+</body>
+</html>
 </body>
 </html>
