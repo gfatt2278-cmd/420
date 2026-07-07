@@ -1,0 +1,43 @@
+<audio id="introMusic" src="intro.mp3"></audio>
+
+<audio id="clickSound" src="click.mp3"></audio>
+
+<script>
+function startIntro() {
+    document.getElementById("startScreen").style.display = "none";
+
+    const story = document.getElementById("story");
+    story.style.display = "block";
+
+    story.innerHTML = `
+        🛸 UNKNOWN SIGNAL DETECTED...
+        <br><br>
+        A strange light appeared...
+        <br><br>
+        Searching...
+    `;
+
+    setTimeout(() => {
+        story.innerHTML = `
+            🌌 Three UFOs appeared...
+            <br><br>
+            MISSION STARTED
+        `;
+    }, 4000);
+
+    setTimeout(() => {
+        story.innerHTML = `
+            👽 Welcome to TEAM 420
+            <br><br>
+            <button onclick="location.reload()">
+                PLAY AGAIN
+            </button>
+        `;
+    }, 8000);
+}
+</script>
+
+</body>
+</html>
+Give feedback
+ဖိုင်တွေက ဒီလိုရှိရပါမယ်
