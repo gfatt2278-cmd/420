@@ -7,6 +7,7 @@
     drop-shadow(0 0 20px #00ff66)
     drop-shadow(0 0 50px #00ff66);
 
+    transition:.4s;
     animation:pulse 2s infinite;
 }
 
